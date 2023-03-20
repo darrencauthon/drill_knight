@@ -22,6 +22,8 @@ defmodule DrillKnight.StringRepeat do
 
   """
   def repeat(count, string) do
-     Enum.join(Enum.map((0..count - 1), fn _ -> string end))
+     (0..count - 1)
+      |> Enum.map(fn _ -> string end)
+      |> Enum.join
   end
 end
