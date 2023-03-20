@@ -25,6 +25,6 @@ defmodule DrillKnight.CountSheep do
 
   """
   def count(sheep) do
-    sheep |> Enum.filter(fn x -> x end) |> Enum.count
+    sheep |> Enum.filter(&(&1)) |> Enum.count
   end
 end
