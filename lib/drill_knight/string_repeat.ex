@@ -11,8 +11,11 @@ defmodule DrillKnight.StringRepeat do
       iex> DrillKnight.StringRepeat.repeat(0, "")
       ""
 
+      iex> DrillKnight.StringRepeat.repeat(1, "x")
+      "x"
+
   """
-  def repeat(_count, _string) do
-    ''
+  def repeat(_count, string) do
+    string
   end
 end
