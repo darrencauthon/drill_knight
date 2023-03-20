@@ -14,8 +14,11 @@ defmodule DrillKnight.StringRepeat do
       iex> DrillKnight.StringRepeat.repeat(1, "x")
       "x"
 
+      iex> DrillKnight.StringRepeat.repeat(2, "x")
+      "xx"
+
   """
-  def repeat(_count, string) do
-    string
+  def repeat(count, string) do
+     Enum.join(Enum.map((0..count - 1), fn _ -> string end))
   end
 end
