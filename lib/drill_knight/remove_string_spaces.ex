@@ -24,7 +24,7 @@ defmodule DrillKnight.RemoveStringSpaces do
       "8aaaaaddddr"
 
   """
-  def no_space(x) do
-    String.replace(x, " ", "")
+  def no_space(value) do
+    String.replace(value, " ", "")
   end
 end
