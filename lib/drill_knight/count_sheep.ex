@@ -14,8 +14,11 @@ defmodule DrillKnight.CountSheep do
       iex> DrillKnight.CountSheep.count([true])
       1
 
+      iex> DrillKnight.CountSheep.count([false])
+      0
+
   """
   def count(sheep) do
-    Enum.count(sheep)
+    Enum.count(Enum.filter(sheep, fn x -> x end))
   end
 end
