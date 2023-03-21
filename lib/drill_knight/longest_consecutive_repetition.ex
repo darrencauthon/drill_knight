@@ -17,6 +17,24 @@ defmodule DrillKnight.LongestConsecutiveRepetition do
       iex> DrillKnight.LongestConsecutiveRepetition.longest("abb")
       {"b", 2}
 
+      iex> DrillKnight.LongestConsecutiveRepetition.longest("aaaabb")
+      {"a", 4}
+
+      iex> DrillKnight.LongestConsecutiveRepetition.longest("bbbaaabaaaa")
+      {"a", 4}
+
+      iex> DrillKnight.LongestConsecutiveRepetition.longest("cbdeuuu900")
+      {"u", 3}
+
+      iex> DrillKnight.LongestConsecutiveRepetition.longest("abbbbb")
+      {"b", 5}
+
+      iex> DrillKnight.LongestConsecutiveRepetition.longest("aabb")
+      {"a", 2}
+
+      iex> DrillKnight.LongestConsecutiveRepetition.longest("ba")
+      {"b", 1}
+
       iex> DrillKnight.LongestConsecutiveRepetition.longest("aaabbcccddd")
       {"a", 3}
 
