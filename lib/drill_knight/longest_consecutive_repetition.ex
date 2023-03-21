@@ -28,11 +28,9 @@ defmodule DrillKnight.LongestConsecutiveRepetition do
 
   def next(chars, last) when chars == [], do: last
 
-  def next(chars, last) when hd(chars) != elem(last, 0) do
-    next(tl(chars), {hd(chars), 1})
-  end
-
-  def next(chars, last) do
+  def next(chars, last) when hd(chars) == elem(last, 0) do
     next(tl(chars), {elem(last, 0), elem(last, 1) + 1})
   end
+
+  def next(chars, _), do: next(tl(chars), {hd(chars), 1})
 end
