@@ -47,5 +47,4 @@ defmodule DrillKnight.LongestConsecutiveRepetition do
            |> Enum.map(&({hd(&1), length(&1)}))
            |> Enum.max_by(fn {_, y} -> y end)
   end
-
 end
