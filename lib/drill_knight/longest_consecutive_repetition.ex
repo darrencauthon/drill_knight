@@ -26,14 +26,16 @@ defmodule DrillKnight.LongestConsecutiveRepetition do
   def longest(string) do
     chars = String.codepoints(string)
 
-    next(tl(chars), {hd(chars), 1})
+    next(tl(chars), {hd(chars), 1}, {hd(chars), 1})
   end
 
-  def next(chars, last) when chars == [], do: last
+  def next(chars, _, best) when chars == [], do: best
 
-  def next(chars, last) when hd(chars) == elem(last, 0) do
-    next(tl(chars), {elem(last, 0), elem(last, 1) + 1})
+  def next(chars, last, best) when hd(chars) == elem(last, 0) do
+    last = {elem(last, 0), elem(last, 1) + 1}
+    best = if elem(last, 1) > elem(best, 1), do: last, else: best
+    next(tl(chars), last, best)
   end
 
-  def next(chars, _), do: next(tl(chars), {hd(chars), 1})
+  def next(chars, _, best), do: next(tl(chars), {hd(chars), 1}, best)
 end
