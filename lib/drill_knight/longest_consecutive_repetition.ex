@@ -44,8 +44,8 @@ defmodule DrillKnight.LongestConsecutiveRepetition do
   def longest(string) do
     string |> String.codepoints
            |> Enum.chunk_by(&(&1))
-           |> Enum.map(fn x -> {List.first(x), length(x)} end)
-           |> Enum.max_by(fn {_x, y} -> y end)
+           |> Enum.map(&({hd(&1), length(&1)}))
+           |> Enum.max_by(fn {_, y} -> y end)
   end
 
 end
