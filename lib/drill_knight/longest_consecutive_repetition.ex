@@ -17,6 +17,9 @@ defmodule DrillKnight.LongestConsecutiveRepetition do
       iex> DrillKnight.LongestConsecutiveRepetition.longest("abb")
       {"b", 2}
 
+      iex> DrillKnight.LongestConsecutiveRepetition.longest("aaabbcccddd")
+      {"a", 3}
+
   """
   def longest(string) when string == "", do: {"", 0}
 
